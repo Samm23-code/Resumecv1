@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <title>Tuki Tuki</title>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Sam</a>
+
+  <!-- Botón hamburguesa -->
+  <div class="menu-toggle" id="menu-toggle">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Menú -->
+  <nav id="nav">
+    <a href="index.html">Inicio</a>
+    <a href="Servicio.html">Servicios</a>
+    <a href="Habilidades.html">Habilidades</a>
+    <a href="Experiencia.html">Experiencia</a>
+    <a href="Contacto.html" class="active">Contacto</a>
+  </nav>
+</header>
+
+
+<!-- JS -->
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav");
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+});
+</script>
+
+<section class="contact" id="contacto">
+  <h2 class="contact-title">Hablemos de tu <span>Proyecto</span></h2>
+  <p class="contact-subtitle">Cuéntame qué necesitas y te responderé lo antes posible</p>
+
+  <form class="contact-form" action="https://formspree.io/f/xoeanwby" method="POST">
+    
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo</label>
+      <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="servicio">Servicio de interés</label>
+      <select id="servicio" name="servicio" required>
+        <option value="" disabled selected>Selecciona un servicio</option>
+        <option value="Producción Musical">Producción Musical</option>
+        <option value="Edición de Video">Edición de Video</option>
+        <option value="Guion y Contenido">Guion y Contenido</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+    </div>
+
+    <button type="submit" class="contact-btn">Enviar Mensaje</button>
+
+  </form>
+</section>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
